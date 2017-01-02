@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use Yii;
+use yii;
 use app\models\Account;
 use app\models\AccountSearch;
 use yii\web\Controller;
@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
+ *
  * AccountController implements the CRUD actions for Account model.
  */
 class AccountController extends Controller
