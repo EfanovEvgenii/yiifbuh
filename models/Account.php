@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "account".
@@ -23,6 +25,7 @@ class Account extends \yii\db\ActiveRecord
     {
         return 'account';
     }
+
 
     /**
      * @inheritdoc
@@ -55,5 +58,17 @@ class Account extends \yii\db\ActiveRecord
     public function getTransactions()
     {
         return $this->hasMany(Transaction::className(), ['account_id' => 'id']);
+    }
+
+    public function behaviors()
+    {
+       return [
+           [
+               'class' => TimestampBehavior::className(),
+               'createdAtAttribute' => 'create_time',
+               'updatedAtAttribute' => 'update_time',
+               'value' => new Expression('NOW()'),
+           ],
+       ];
     }
 }

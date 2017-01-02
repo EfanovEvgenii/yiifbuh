@@ -27,15 +27,30 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'FBuh',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
+            ['label' => 'Операции', 'url' => ['/transaction']],
+            ['label' => 'Отчеты', 'url' => ['/report']],
+            ['label' => 'Справочники', 
+                'url' => ['/catalog'],
+                'options'=>['class'=>'dropdown'],
+			    'template' => '<a href="{url}" class="url-class">{label}</a>',
+			    'items' => [
+                    ['label' => 'Счета/кошельки', 'url' => ['account/index']],
+                    ['label' => 'Контрагенты/партнеры', 'url' => ['partner/index']],
+                    ['label' => 'Статьи расходов', 'url' => ['costitem/index']],
+                    ['label' => 'Статьи доходов', 'url' => ['revenueitem/index']],
+                    ['label' => 'Типы операций', 'url' => ['transactiontype/index']],
+                ]
+            
+            ],
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
