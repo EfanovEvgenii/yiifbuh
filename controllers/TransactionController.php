@@ -2,12 +2,18 @@
 
 namespace app\controllers;
 
-use Yii;
+use app\models\Account;
+use app\models\CostItem;
+use app\models\Partner;
+use app\models\Project;
+use app\models\RevenueItem;
 use app\models\Transaction;
 use app\models\TransactionSearch;
+use app\models\TransactionType;
+use Yii;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * TransactionController implements the CRUD actions for Transaction model.
@@ -70,6 +76,12 @@ class TransactionController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'costItem' => CostItem::find()->all(),
+                'revenueItem' => RevenueItem::find()->all(),
+                'account' => Account::find()->all(),
+                'transactionType' => TransactionType::find()->all(),
+                'partner' => Partner::find()->all(),
+                'project' => Project::find()->all(),
             ]);
         }
     }
@@ -89,6 +101,12 @@ class TransactionController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'costItem' => CostItem::find()->all(),
+                'revenueItem' => RevenueItem::find()->all(),
+                'account' => Account::find()->all(),
+                'transactionType' => TransactionType::find()->all(),
+                'partner' => Partner::find()->all(),
+                'project' => Project::find()->all(),
             ]);
         }
     }

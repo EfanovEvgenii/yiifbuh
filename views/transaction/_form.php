@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -24,17 +25,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time')->textInput() ?>
 
-    <?= $form->field($model, 'costItem_id')->textInput() ?>
+    <?= $form->field($model, 'costItem_id')->dropDownList(
+        ArrayHelper::map($costItem, 'id', 'title')
+    ) ?>
 
-    <?= $form->field($model, 'revenueItem_id')->textInput() ?>
+    <?= $form->field($model, 'revenueItem_id')->dropDownList(
+        ArrayHelper::map($revenueItem, 'id', 'title')
+    ) ?>
 
-    <?= $form->field($model, 'account_id')->textInput() ?>
+    <?= $form->field($model, 'account_id')->dropDownList(
+        ArrayHelper::map($account, 'id', 'title')
+    ) ?>
 
-    <?= $form->field($model, 'transactionType_id')->textInput() ?>
+    <?= $form->field($model, 'transactionType_id')->dropDownList(
+        ArrayHelper::map($transactionType, 'id', 'title')
+    ) ?>
 
-    <?= $form->field($model, 'partner_id')->textInput() ?>
+    <?= $form->field($model, 'partner_id')->dropDownList(
+        ArrayHelper::map($partner, 'id', 'title')
+    ) ?>
 
-    <?= $form->field($model, 'project_id')->textInput() ?>
+    <?= $form->field($model, 'project_id')->dropDownList(
+        ArrayHelper::map($project, 'id', 'title')
+    ) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
