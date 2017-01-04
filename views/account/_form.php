@@ -17,6 +17,7 @@ use yii\widgets\ActiveForm;
     <p>Дата создания:<?= Html::label($model->create_time) ?></p>
 
     <p>Дата изменения:<?= Html::label($model->update_time) ?></p>
+    
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
