@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "revenueitem".
  *
@@ -14,7 +12,7 @@ use Yii;
  *
  * @property Transaction[] $transactions
  */
-class RevenueItem extends \yii\db\ActiveRecord
+class RevenueItem extends BaseModel
 {
     /**
      * @inheritdoc

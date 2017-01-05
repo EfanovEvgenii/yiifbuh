@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "project".
  *
@@ -16,7 +14,7 @@ use Yii;
  *
  * @property Transaction[] $transactions
  */
-class Project extends \yii\db\ActiveRecord
+class Project extends BaseModel
 {
     /**
      * @inheritdoc

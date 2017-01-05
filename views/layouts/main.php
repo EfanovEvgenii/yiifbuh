@@ -45,6 +45,7 @@ AppAsset::register($this);
 			    'items' => [
                     ['label' => 'Счета/кошельки', 'url' => ['account/index']],
                     ['label' => 'Контрагенты/партнеры', 'url' => ['partner/index']],
+                    ['label' => 'Проекты', 'url' => ['project/index']],
                     ['label' => 'Статьи расходов', 'url' => ['costitem/index']],
                     ['label' => 'Статьи доходов', 'url' => ['revenueitem/index']],
                     ['label' => 'Типы операций', 'url' => ['transactiontype/index']],

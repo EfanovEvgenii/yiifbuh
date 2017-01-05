@@ -20,10 +20,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'summa')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'create_time')->textInput() ?>
-
-    <?= $form->field($model, 'update_time')->textInput() ?>
-
     <?= $form->field($model, 'time')->textInput() ?>
 
     <?= $form->field($model, 'costItem_id')->dropDownList(
@@ -49,6 +45,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'project_id')->dropDownList(
         ArrayHelper::map($project, 'id', 'title')
     ) ?>
+
+    <p>Дата создания:<?= Html::label($model->create_time) ?>
+        Дата изменения:<?= Html::label($model->update_time) ?></p>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

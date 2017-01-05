@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
  * This is the model class for table "partner".
  *
@@ -14,7 +12,7 @@ use Yii;
  *
  * @property Transaction[] $transactions
  */
-class Partner extends \yii\db\ActiveRecord
+class Partner extends BaseModel
 {
     /**
      * @inheritdoc

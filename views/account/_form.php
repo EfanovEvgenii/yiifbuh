@@ -14,9 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <p>Дата создания:<?= Html::label($model->create_time) ?></p>
-
-    <p>Дата изменения:<?= Html::label($model->update_time) ?></p>
+    <p>Дата создания:<?= Html::label($model->create_time) ?>
+    Дата изменения:<?= Html::label($model->update_time) ?></p>
 
 
     <div class="form-group">
